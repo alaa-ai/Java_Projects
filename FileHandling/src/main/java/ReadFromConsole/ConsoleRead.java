@@ -35,8 +35,10 @@ public class ConsoleRead {
                     System.out.println("Enter Data: ");
                     name = br.readLine();
                     System.out.println("Data is: " + name);
-                     buffer.write(name+"\n");
                     
+                    if(!name.equals("stop")){
+                        buffer.write(name+"\n");
+                    }
                 }catch (IOException ex){
                     ex.printStackTrace();
                 }
@@ -46,6 +48,7 @@ public class ConsoleRead {
             buffer.close();
             br.close();
             r.close();
+            
         }catch (IOException ex){
                     ex.printStackTrace();
                 }
