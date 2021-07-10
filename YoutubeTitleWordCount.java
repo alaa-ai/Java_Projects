@@ -27,7 +27,7 @@ public class YoutubeTitleWordCount {
         
         // TRANSFORMATIONS
         JavaRDD<String> titles = videos
-                .map (YoutubeTitleWordCount::extractTitle)
+                .map (SPKDAO::extractTitle)
                 .filter (StringUtils::isNotBlank);
        // JavaRDD<String>
         JavaRDD<String> words = titles.flatMap (title -> Arrays.asList (title
@@ -47,12 +47,12 @@ public class YoutubeTitleWordCount {
         System.out.println("/**************************************************************/");
         // TRANSFORMATIONS
         JavaRDD<String> tags = videos
-                .map (YoutubeTitleWordCount::extractTags)
+                .map (SPKDAO::extractTags)
                 .filter (StringUtils::isNotBlank);
        // JavaRDD<String>
         JavaRDD<String> smallWords = tags.flatMap (tag -> Arrays.asList (tag
                 .toLowerCase ()
-                .trim ()  //.replaceAll ("\\p{Punct}", "")
+                .trim ()
                 .split ("\\|")).iterator ());
         System.out.println(smallWords.toString ());
         // COUNTING
@@ -64,22 +64,6 @@ public class YoutubeTitleWordCount {
             System.out.println (entry.getKey () + " : " + entry.getValue ());
         }
         /**************************************************************/
-    }
-    public static String extractTitle(String videoLine) {
-        try {
-            return videoLine.split (COMMA_DELIMITER)[2];
-        } catch (ArrayIndexOutOfBoundsException e) {
-            return "";
-        }
-    }
-
-    public static String extractTags(String line) {
-        try {
-            return line.split (COMMA_DELIMITER)[6];
-        } catch (ArrayIndexOutOfBoundsException e) {
-            return "";
-        }
-        
     }
     
 }
