@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Thymeleaf Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+
+<body>
+<h2>Most popular Areas</h2>
+
+<p th:text="'This bar chart represnts the most common areas for jobs:' "/>
+
+<img th:src="@{/images/popularAreas.png}" style="width:50%;"/>
+
+
+
+</body>
+
+</html>

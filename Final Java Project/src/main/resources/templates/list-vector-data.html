@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Data Directory</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>Sample of Wuzzuf Dataset</h3>
+	<hr>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Title</th>
+				<th>Company</th>
+				<th>Location</th>
+		    	<th>Type</th>
+				<th>Level</th>
+			<th>YearsExp</th>
+				<th>Country</th>
+				<th>Skills</th>
+				<th>Year Experience Index</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempEmployee : ${datalist}">
+			
+				<td th:text="${tempEmployee.title}" />
+				<td th:text="${tempEmployee.company}" />
+				<td th:text="${tempEmployee.location}" />
+				<td th:text="${tempEmployee.type}" />
+				<td th:text="${tempEmployee.level}" />
+			    <td th:text="${tempEmployee.yeasExp}" />
+				<td th:text="${tempEmployee.country}" />
+				<td th:text="${tempEmployee.skills}" />
+				<td th:text="${tempEmployee.expIndex}" />
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+

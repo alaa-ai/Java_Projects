@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<!-- paste -->
+
+<body>
+<h1>Most popular Titles</h1>
+
+<p th:text="'This bar chart represents the most common job titles:' "/>
+<!--<p th:text="'Time on the server is ' " /> -->
+<img th:src="@{/images/popularTitles.png}" style="width:50%;"/>
+
+<!-- <p th:text="'Time on the server is ' + ${theDate}" />  -->
+
+</body>
+
+</html>
+
+
+
